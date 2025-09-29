@@ -1,45 +1,95 @@
+'use client';
 import Link from 'next/link';
 import { personalInfo, highlights } from '@/lib/data';
+import { useTheme } from '@/contexts/ThemeContext';
+import ThemeSelector from './ThemeSelector';
+
 
 export default function HeroSection() {
+  const { currentTheme } = useTheme();
+
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`min-h-[calc(100vh-4rem)] flex items-center justify-center relative overflow-hidden ${currentTheme.typography.fontFamily}`}>
+
+      <ThemeSelector />
+
+      <BackgroundLayer />
+      
+      <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8  z-10 ${currentTheme.background.type === 'video' ? 'glass absolute bottom-20' : 'relative'}`}>
         <div className="text-center">
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-6 tracking-tight">
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl ${currentTheme.typography.fontWeight} ${currentTheme.text.heading} mb-6 tracking-tight`}>
             Hello, I&apos;m {personalInfo.name}
           </h1>
-          
-          {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-gray-600 mb-4">
-            {personalInfo.title}
-          </p>
-          
-          <p className="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-            {personalInfo.subtitle}
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/projects"
-              className="bg-black text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
-            >
-              View My Work
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-black text-black px-8 py-3 font-medium hover:bg-black hover:text-white transition-colors"
-            >
-              Get In Touch
-            </Link>
-          </div>
+
+          {currentTheme.background.type !== 'video' && (
+            <>
+              <p className={`text-xl sm:text-2xl ${currentTheme.text.subtitle} mb-4`}>
+                {personalInfo.title}
+              </p>
+            
+
+              <p className={`text-lg ${currentTheme.text.body} mb-12 max-w-2xl mx-auto`}>
+                {personalInfo.subtitle}
+              </p>
+
+              <CTAButtons />
+            </>
+          )}
+
         </div>
       </div>
     </section>
   );
 }
+
+function BackgroundLayer() {
+  const { currentTheme } = useTheme();
+  
+  return (
+    <>
+      {currentTheme.background.type === 'video' && currentTheme.background.videoSrc ? (
+        <>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={currentTheme.background.videoSrc} type="video/mp4" />
+          </video>
+          {currentTheme.background.overlay && (
+            <div className={`absolute inset-0 ${currentTheme.background.overlay}`} />
+          )}
+        </>
+      ) : (
+        <div className={`absolute inset-0 w-full h-full ${currentTheme.background.classes}`} />
+      )}
+    </>
+  );
+}
+
+const CTAButtons = () => {
+  const { currentTheme } = useTheme();
+
+  return (
+    <div className="mt-8 flex justify-center space-x-4">
+      <Link
+        href="/projects"
+        className={`px-6 py-3 rounded transition-colors ${currentTheme.buttons.primary}`}
+      >
+        View Projects
+      </Link>
+      <Link
+        href="/contact"
+        className={`px-6 py-3 rounded transition-colors ${currentTheme.buttons.secondary}`}
+      >
+        Contact Me
+      </Link>
+    </div>
+  );
+};
 
 export function HighlightsSection() {
   return (
