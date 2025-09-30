@@ -9,13 +9,13 @@ export default function HeroSection() {
   const { currentTheme } = useTheme();
 
   return (
-    <section className={`hero min-h-[calc(100vh-4rem)] flex items-center justify-center relative overflow-hidden ${currentTheme.typography.fontFamily}`}>
+    <section className={`hero min-h-[calc(90vh-4rem)] flex items-center justify-center relative overflow-hidden ${currentTheme.typography.fontFamily}`}>
 
       <ThemeSelector />
 
       <BackgroundLayer />
       
-      <div className={`content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8  z-10 ${currentTheme.background.type === 'video' ? 'absolute bottom-40 mix-blend-plus-lighter' : 'relative'}`}>
+      <div className={`content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8  z-10 ${currentTheme.background.type === 'video' ? 'absolute bottom-[25%] mix-blend-plus-lighter' : 'relative'}`}>
         <div className="text-center">
           {/* Main Heading */}
           <h1 className={`text-4xl sm:text-5xl lg:text-6xl ${currentTheme.typography.fontWeight} ${currentTheme.text.hero} mb-6 tracking-tight`}>
@@ -29,7 +29,7 @@ export default function HeroSection() {
               </p>
             
 
-              <p className={`text-lg ${currentTheme.text.body} mb-12 max-w-2xl mx-auto`}>
+              <p className={`text-lg ${currentTheme.text.hero} opacity-80 mb-12 max-w-2xl mx-auto`}>
                 {personalInfo.subtitle}
               </p>
 
@@ -92,11 +92,12 @@ const CTAButtons = () => {
 };
 
 export function HighlightsSection() {
+  const { currentTheme } = useTheme();
   return (
     <section className="py-16 bg-gray-50 relative z-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-light text-black mb-4">
+          <h2 className={`text-2xl sm:text-3xl ${currentTheme.text.heading} ${currentTheme.typography.fontWeight} mb-4`}>
             What I Do
           </h2>
         </div>

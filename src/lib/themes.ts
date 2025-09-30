@@ -26,14 +26,14 @@ export interface Theme {
 export const themes: Record<string, Theme> = {
   minimal: {
     id: 'minimal',
-    name: 'Minimal White',
+    name: 'Minimal',
     background: {
       type: 'solid',
       classes: 'bg-white'
     },
     text: {
       heading: 'text-black',
-      subtitle: 'text-gray-600', 
+      subtitle: 'text-gray-800', 
       body: 'text-gray-500',
       hero: 'text-black'
     },
@@ -54,9 +54,9 @@ export const themes: Record<string, Theme> = {
       classes: 'bg-gradient-to-br from-teal-400 via-blue-700 to-indigo-900'
     },
     text: {
-      heading: 'text-white',
-      subtitle: 'text-blue-100',
-      body: 'text-blue-200',
+      heading: 'bg-gradient-to-r from-teal-600 via-blue-700 to-indigo-900 bg-clip-text text-transparent',
+      subtitle: 'text-blue-700',
+      body: 'text-blue-950',
       hero: 'text-white'
     },
     typography: {
@@ -75,13 +75,13 @@ export const themes: Record<string, Theme> = {
       type: 'video',
       classes: 'bg-green-900',
       videoSrc: '/videos/bird-clips.webm',
-      overlay: 'bg-black/30'
+      overlay: 'bg-green-900/40'
     },
     text: {
-      heading: 'text-white',
-      subtitle: 'text-white',
-      hero: 'text-white',
-      body: 'text-green-200'
+      heading: 'text-green-800',
+      subtitle: 'text-green-600',
+      body: 'text-gray-950',
+      hero: 'text-white'
     },
     typography: {
       fontFamily: 'font-sans',
@@ -94,4 +94,4 @@ export const themes: Record<string, Theme> = {
   }
 };
 
-export const defaultTheme = themes.minimal;
+export const defaultTheme = themes.ocean;
