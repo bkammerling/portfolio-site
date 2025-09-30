@@ -58,3 +58,18 @@ html {
   border-radius: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
+
+@keyframes parallax {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: -400px;
+  }
+}
+
+section.hero {
+  animation: parallax 3s linear;
+  animation: parallax linear;
+  animation-timeline: scroll(); 
+}

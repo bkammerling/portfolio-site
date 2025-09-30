@@ -11,6 +11,7 @@ export interface Theme {
     heading: string;
     subtitle: string;
     body: string;
+    hero: string;
   };
   typography: {
     fontFamily: string;
@@ -33,7 +34,8 @@ export const themes: Record<string, Theme> = {
     text: {
       heading: 'text-black',
       subtitle: 'text-gray-600', 
-      body: 'text-gray-500'
+      body: 'text-gray-500',
+      hero: 'text-black'
     },
     typography: {
       fontFamily: 'font-sans',
@@ -54,7 +56,8 @@ export const themes: Record<string, Theme> = {
     text: {
       heading: 'text-white',
       subtitle: 'text-blue-100',
-      body: 'text-blue-200'
+      body: 'text-blue-200',
+      hero: 'text-white'
     },
     typography: {
       fontFamily: 'font-sans',
@@ -77,6 +80,7 @@ export const themes: Record<string, Theme> = {
     text: {
       heading: 'text-white',
       subtitle: 'text-white',
+      hero: 'text-white',
       body: 'text-green-200'
     },
     typography: {
