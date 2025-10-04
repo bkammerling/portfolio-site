@@ -1,14 +1,17 @@
+'use client';
 import Link from 'next/link';
 import { projects } from '@/lib/data';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function FeaturedProjects() {
-  const featuredProjects = projects.filter(project => project.featured);
+    const featuredProjects = projects.filter(project => project.featured);
+    const { currentTheme } = useTheme();
 
   return (
     <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-light text-black mb-8">
+          <h2 className={`text-2xl sm:text-3xl mb-8 ${currentTheme.text.heading} ${currentTheme.typography.fontWeight}`}>
             Featured Projects
           </h2>
         </div>
@@ -22,11 +25,11 @@ export default function FeaturedProjects() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Project Info */}
                 <div className="lg:col-span-2">
-                  <h3 className="text-xl font-medium text-black mb-2">
+                  <h3 className={`text-xl font-medium ${currentTheme.text.heading} mb-2`}>
                     {project.title}
                   </h3>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+
+                  <p className={`text-gray-600 mb-4 leading-relaxed ${currentTheme.text.body}`}>
                     {project.description}
                   </p>
 
@@ -35,7 +38,7 @@ export default function FeaturedProjects() {
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs"
+                        className={`px-2 py-1 bg-gray-100  text-xs`}
                       >
                         {tech}
                       </span>
@@ -49,7 +52,7 @@ export default function FeaturedProjects() {
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-black hover:text-gray-600 text-sm underline"
+                        className={`${currentTheme.text.subtitle} hover:text-gray-600 text-sm underline`}
                       >
                         Live Demo
                       </a>
@@ -59,7 +62,7 @@ export default function FeaturedProjects() {
                         href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-black hover:text-gray-600 text-sm underline"
+                        className={`${currentTheme.text.subtitle} hover:text-gray-600 text-sm underline`}
                       >
                         GitHub
                       </a>
@@ -92,7 +95,7 @@ export default function FeaturedProjects() {
         <div>
           <Link
             href="/projects"
-            className="text-black hover:text-gray-600 font-medium underline"
+            className={`${currentTheme.text.subtitle} hover:text-gray-600 font-medium underline`}
           >
             View All Projects →
           </Link>

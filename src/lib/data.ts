@@ -2,31 +2,32 @@ import { Project, WorkExperience, Education, Skill, SocialLink } from '@/types';
 
 export const personalInfo = {
   name: "Ben Kammerling",
-  title: "Developer, Designer, Nature-Lover",
-  subtitle: "Your friendly creative problem-solver",
-  bio: "Based in London, vegetarian, cyclist, tennis player, always learning.",
-  email: "hello@benkammerling.com",
+  title: "Developer, Marketer, Designer",
+  subtitle: "Creative problem-solver",
+  bio: "Based in London, cyclist, tea-lover, bird-watcher, learner.",
+  email: "hi@benkammerling.co.uk",
   location: "London, UK",
   avatar: "/images/avatar.jpg"
 };
 
 export const projects: Project[] = [
   {
-    id: "ecommerce-platform",
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with React and Node.js",
-    longDescription: "A full-stack e-commerce platform built with React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
-    image: "/images/projects/ecommerce.jpg",
-    tags: ["E-commerce", "Full Stack"],
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
+    id: "slack-app",
+    title: "Slack App",
+    description: "Praise giving app built with NodeJS, Giphy API and Firebase",
+    longDescription: `That thing you did? Goodness me that was great.It's a lovely thing to give and receive praise. When Good Humans approached me with the idea of building their own Slack app, I jumped at the opportunity.
+With the Praise, you can send thank yous, shoutouts and big praise to your teammates on the General Channel for everyone to see. Type Praise, add one or more teammates, and Praise tells the whole team about it, with an added gif on the theme of praising.
+It's built serverless and uses Netlify functions for the oAuth and the shortcode functionality. It had to get through Slack's strict app guidelines to be shown on the marketplace.`,
+    image: "/images/projects/slack-app.jpg",
+    tags: ["Full-Stack", "UX"],
+    technologies: ["Node.js", "Firebase", "RestfulAPIs", "Serverless", "OAuth 2.0"],
     links: {
-      live: "https://example.com",
-      github: "https://github.com/example/ecommerce",
-      case_study: "/projects/ecommerce-platform"
+      live: "https://slack.com/marketplace/A04SFPKV7JQ-praise",
+      case_study: "/projects/slack-app"
     },
     featured: true,
     year: 2024,
-    role: "Full Stack Developer",
+    role: "Full-Stack Developer",
     challenges: [
       "Implemented real-time inventory management",
       "Optimized database queries for better performance",

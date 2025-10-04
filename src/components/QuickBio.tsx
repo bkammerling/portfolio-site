@@ -1,14 +1,17 @@
+'use client';
 import Link from 'next/link';
 import { personalInfo } from '@/lib/data';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function QuickBio() {
+    const { currentTheme } = useTheme();
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Bio Content */}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl sm:text-3xl font-light text-black mb-6">
+            <h2 className={`text-2xl sm:text-3xl mb-6 ${currentTheme.text.heading} ${currentTheme.typography.fontWeight}`}>
               About
             </h2>
             
@@ -27,7 +30,7 @@ export default function QuickBio() {
             {/* CTA */}
             <Link
               href="/cv"
-              className="text-black hover:text-gray-600 font-medium underline"
+              className={`${currentTheme.text.subtitle} hover:text-gray-600 font-medium underline`}
             >
               View Full CV →
             </Link>
@@ -37,15 +40,15 @@ export default function QuickBio() {
           <div>
             <div className="space-y-6">
               <div>
-                <div className="text-2xl font-light text-black">5+</div>
+                <div className={`text-2xl ${currentTheme.text.heading}`}>8+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-black">50+</div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
+                <div className={`text-2xl ${currentTheme.text.heading}`}>110+</div>
+                <div className="text-sm text-gray-600">Birds on Life List</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-black">10k+</div>
+                <div className={`text-2xl ${currentTheme.text.heading}`}>10M+</div>
                 <div className="text-sm text-gray-600">Users Reached</div>
               </div>
             </div>
