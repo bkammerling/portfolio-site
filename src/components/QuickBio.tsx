@@ -14,8 +14,8 @@ export default function QuickBio() {
             
             <div className="space-y-4 text-gray-600 mb-8 leading-relaxed">
               <p>
-                I&apos;m a developer and marketer who loves turning complex problems into simple, 
-                elegant solutions. With over 5 years of experience, I&apos;ve helped companies grow from 
+                I'm a developer and marketer who loves turning complex problems into simple, 
+                elegant solutions. With over 8 years of experience, I've helped companies grow from 
                 startups to scale-ups.
               </p>
               

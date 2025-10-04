@@ -68,6 +68,28 @@ export const themes: Record<string, Theme> = {
       secondary: 'border-2 border-white text-white hover:bg-white hover:text-blue-700'
     }
   },
+  bumblebee: {
+    id: 'bumblebee',
+    name: 'Bumblebee',
+    background: {
+      type: 'gradient',
+      classes: 'bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600'
+    },
+    text: {
+      heading: 'text-black',
+      subtitle: 'text-black',
+      body: 'text-black',
+      hero: 'text-black'
+    },
+    typography: {
+      fontFamily: 'font-sans',
+      fontWeight: 'font-extrabold'
+    },
+    buttons: {
+      primary: 'bg-black text-yellow-400 hover:bg-black/80',
+      secondary: 'border-2 border-black text-black hover:bg-yellow-500'
+    }
+  },
   nature: {
     id: 'nature',
     name: 'Nature',
@@ -85,7 +107,7 @@ export const themes: Record<string, Theme> = {
     },
     typography: {
       fontFamily: 'font-sans',
-      fontWeight: 'font-extrabold'
+      fontWeight: 'font-black'
     },
     buttons: {
       primary: 'bg-green-600 text-white hover:bg-green-700',

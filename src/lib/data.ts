@@ -2,8 +2,8 @@ import { Project, WorkExperience, Education, Skill, SocialLink } from '@/types';
 
 export const personalInfo = {
   name: "Ben Kammerling",
-  title: "Front-end Dev, Marketeer, Designer",
-  subtitle: "Creative problem-solver",
+  title: "Developer, Designer, Nature-Lover",
+  subtitle: "Your friendly creative problem-solver",
   bio: "Based in London, vegetarian, cyclist, tennis player, always learning.",
   email: "hello@benkammerling.com",
   location: "London, UK",

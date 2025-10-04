@@ -15,7 +15,7 @@ export default function HeroSection() {
 
       <BackgroundLayer />
       
-      <div className={`content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8  z-10 ${currentTheme.background.type === 'video' ? 'absolute bottom-40 mix-blend-plus-lighter' : 'relative'}`}>
+      <div className={`content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8  z-10 ${currentTheme.background.type === 'video' ? 'absolute bottom-40 mix-blend-plus-lighter opacity-80' : 'relative'}`}>
         <div className="text-center">
           {/* Main Heading */}
           <h1 className={`text-4xl sm:text-5xl lg:text-6xl ${currentTheme.typography.fontWeight} ${currentTheme.text.hero} mb-6 tracking-tight`}>
