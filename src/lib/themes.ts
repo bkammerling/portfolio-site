@@ -76,8 +76,8 @@ export const themes: Record<string, Theme> = {
       classes: 'bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600'
     },
     text: {
-      heading: 'text-black',
-      subtitle: 'text-black',
+      heading: 'bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent',
+      subtitle: 'yellow-900',
       body: 'text-black',
       hero: 'text-black'
     },
